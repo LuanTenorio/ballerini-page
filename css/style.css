@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html, body{
+    font-size: 100%;
+    background: linear-gradient(60deg, #007167 16.62%, #bac32b 85.61%);
+    overflow-x: hidden;
+    
+}
+::-webkit-scrollbar{
+	width: 7px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb{
+	background: #1C1C1C;
+	border: 1.8px solid #1C1C1C;
+	border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: #181818;
+}
+::-webkit-scrollbar-track{
+	background: #ECF4FF;
+	border-radius: 100px;
+	box-shadow: inset 0px 0px 0px 0px #F0F0F0;
+	margin: 15px 0px;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+    position: relative;
+}
+header::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #ecd4c02d, #ecd4c0, #ecd4c02d);
+}
+header img{
+    height: 56px;
+    border-radius: 28px;
+    cursor: pointer;
+}
+header nav{
+    display: flex;
+    gap: 32px;
+}
+header nav a{
+    font-family: 'Sarala', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fbfbfb;
+    cursor: pointer;
+    position: relative;
+    text-shadow: -1px 1px 6px #5d747186;
+    transition: .4s linear;
+}
+header nav a::before{
+    content: '';
+    position: absolute;
+    height: 2.5px;
+    width: 110%;
+    background-color: var(--bgcolor);
+    border-radius: 3px;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%) scaleX(0);
+    transition: .5s;
+}
+header nav a:hover{
+    text-shadow: var(--shadow);
+    color: var(--color);
+}
+header nav a:hover::before{
+    box-shadow: var(--lineShadow);
+    transform: translateX(-50%) scaleX(1);
+}
+
+main{
+    margin-bottom: 48px;
+}
+main .informacao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 30px 2%;
+}
+.informacao div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.informacao h1{
+    font-family: 'Righteous', cursive;
+    color: #fff2e7;
+    font-size: 68px;
+    font-weight: 400;
+}
+.informacao h2{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #ecd6c4;
+}
+.informacao button{
+    width: 180px;
+    height: 60px;
+    border-radius: 90px;
+    border: none;
+    background-color: #a3ccc6;
+    box-shadow: -4px 5px 8px  3px #00382140;
+    font-family: 'Sarala', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #140f0b;
+    cursor: pointer;
+    position: relative;
+    transition: .4s;
+}
+.informacao button::before{
+    content: 'ME ADICIONE';
+    position: absolute;
+    font-size: 20px;
+    width: 100%;
+    z-index: 3;
+    color: #24a370;    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    transition: .7s;
+}
+.informacao button::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 90px;
+    width: 0;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(50deg, #0cb557, #03996f);
+}
+.informacao button:hover{
+    box-shadow: -7px 8px 8px 3px #00382140;
+}
+.informacao button:hover::after{
+    animation: button .5s linear;
+    animation-fill-mode: forwards;
+}
+.informacao button:hover::before{
+    color: #006a40;
+    text-shadow: -1px 1px 5px;
+    font-weight: 600;
+}
+/*#03996f*/
+.informacao img, .conteudo img{
+    height: 400px;
+    filter: blur(0);/*colocar de volta*/
+    transition: .4s;
+    border-radius: 73px;
+}
+.informacao img:hover{
+    filter: blur(0);
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+    padding: 0 2%;
+}
+.conteudo h3{
+    padding-top: 40px;
+    font-weight: 400;
+    font-family: 'Righteous', cursive;
+    font-size: 24px;
+    color: #fff2e7;
+    margin-bottom: 20px;
+    position: relative;
+}
+.conteudo h3::before{
+    position: absolute;
+    content: '';
+    width: 150%;
+    height: 1px;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #ecd4c02d, #ecd4c0, #ecd4c02d);
+}
+.conteudo .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80vw;
+    align-items: center;
+    max-width: 1400px;
+}
+.conteudo img{
+    height: 325px;
+}
+.conteudo p{
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff2e7;
+}
+.conteudo strong{
+    color: #a0f3e7;
+}
+
+footer{
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, #ecd4c02d, #ecd4c0, #ecd4c02d);
+}
+footer img{
+    height: 90px;
+}
+footer .mais{
+    height: 50px;
+    animation: girando 6.5s linear infinite
+}
+@media screen and (max-width: 1024px){
+    .conteudo .main{
+        width: 88vw;
+    }
+}
+@media screen and (max-width: 855px){
+    header, header nav{
+        flex-direction: column;
+    }
+    header nav{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    header nav a{
+        text-shadow: var(--shadow);
+        color: var(--color);
+    }
+    .informacao h2, .informacao h1{
+        text-align: center;
+    }
+    .conteudo div{
+        padding: 0 3%;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+    }
+    .conteudo .main{
+        width: 95vw;
+        text-align: center;
+    }
+    .main img{
+        display: none;
+    }
+}
+@media screen and (max-width: 730px){
+    main .informacao{
+        flex-direction: column-reverse;
+    }
+    .informacao img, .conteudo img{
+        height: 320px;
+    }
+    .conteudo div{
+        text-align: center;
+    }
+}
+
+@keyframes button {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    43%{
+        width: 33.333%;
+        height: calc(100% + 2px);
+    }
+    100%{
+        width: calc(100% + 2px);
+        height: calc(100% + 2px);
+    }
+}
+
+@keyframes girando {
+    from {transform: rotateZ(0);}
+    to {transform: rotateZ(360deg);}
+}
